@@ -19,6 +19,7 @@
 .container header > div {
   width: 100%;
   max-width: 1480px;
+  padding: 0px 20px;
 }
 
 .container header > div h1 {
@@ -33,6 +34,7 @@
   justify-content: center;
   display: flex;
   padding-top: 50px;
+  padding: 0px 20px;
 }
 
 .container main h2 {
