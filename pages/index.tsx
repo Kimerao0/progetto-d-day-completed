@@ -14,7 +14,9 @@ export default function Home() {
           <h1>Next Blog</h1>
         </div>
       </header>
-      <main></main>
+      <main>
+        <h2>Benvenuti al D-Day di Next.js</h2>
+      </main>
     </div>
   );
 }

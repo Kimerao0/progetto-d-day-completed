@@ -1,8 +1,10 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: white;
   height: 100vh;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container header {
@@ -23,4 +25,17 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
+}
+
+.container main {
+  width: 100%;
+  max-width: 1480px;
+  justify-content: center;
+  display: flex;
+  padding-top: 50px;
+}
+
+.container main h2 {
+  font-size: 2rem;
+  font-weight: 500;
 }
