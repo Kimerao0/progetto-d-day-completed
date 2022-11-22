@@ -15,7 +15,7 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <h2>Benvenuti al D-Day di Next.js</h2>
+        <h2>Benvenuti al Developer Day di Next.js</h2>
       </main>
     </div>
   );
