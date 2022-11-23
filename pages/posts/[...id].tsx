@@ -1,15 +1,17 @@
 import { useRouter } from "next/router";
+import { getData } from "../../utils/functions";
 
-const SingoloArticolo = () => {
-  const router = useRouter();
-  console.log(router.pathname);
-  console.log(router.query);
-  const text = router.query.id
-    ? typeof router.query.id === "string"
-      ? router.query.id
-      : router.query.id[router.query.id.length - 1]
-    : "Nessun articolo";
-  return <div>{text}</div>;
+const SingoloArticolo = (props: any) => {
+  return (
+    <div>
+      <h2></h2>
+      <p></p>
+    </div>
+  );
 };
+
+export async function getStaticProps(context: any) {
+  console.log(context);
+}
 
 export default SingoloArticolo;
