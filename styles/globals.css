@@ -66,4 +66,11 @@ a {
 .container main h2 {
   font-size: 2rem;
   font-weight: 500;
+  margin-top: 150px;
+}
+
+.container main h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 50px;
 }
