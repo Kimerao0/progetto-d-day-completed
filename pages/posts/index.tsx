@@ -3,7 +3,7 @@ import { getData } from "../../utils/functions";
 
 const PostsPage = (props: any) => {
   return (
-    <div>
+    <div className="page">
       <h2>Posts Page</h2>
       <ul>
         {props.posts.map((post: any) => (
