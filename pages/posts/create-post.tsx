@@ -1,53 +1,55 @@
-import { useState } from "react";
+import * as React from "react";
 import { Post } from "../../dto/post";
-import { dbConnection } from "../../utils/util";
 
 const CreatePostPage = () => {
-  const [title, setTitle] = useState<string>("");
-  const [image, setImage] = useState<string>("");
-  const [content, setContent] = useState<string>("");
-  const [author, setAuthor] = useState<string>("");
-  const [post, setPost] = useState<Post>();
+  const [title, setTitle] = React.useState<string>("");
+  const [image, setImage] = React.useState<string>("");
+  const [content, setContent] = React.useState<string>("");
+  const [author, setAuthor] = React.useState<string>("");
 
-  const handleTitleChange = (e: any) => {
+  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
 
-  const handleImgChange = (e: any) => {
+  const handleImgChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setImage(e.target.value);
   };
 
-  const handleContentChange = (e: any) => {
+  const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
   };
 
-  const handleAuthorChange = (e: any) => {
+  const handleAuthorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAuthor(e.target.value);
   };
 
-  const handleFormSubmit = (e: any) => {
+  const handleFormSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const _post: Post = {
-      title,
-      img: image,
-      content,
-      author,
+    const newPost: Post = {
+      title: title,
+      image: image,
+      content: content,
+      author: author,
     };
-    setPost(_post);
+    fetch("http://localhost:3000/api/create-post", {
+      method: "POST",
+      body: JSON.stringify({ ...newPost }),
+    });
   };
 
   return (
     <main>
       <h2>Create new Article</h2>
       <form onSubmit={handleFormSubmit}>
-        <label>Title</label>
-        <input type="text" value={title} onChange={handleTitleChange} />
-        <label>Image</label>
-        <input type="text" value={image} onChange={handleImgChange} />
-        <label>Content</label>
-        <textarea rows={10} value={content} onChange={handleContentChange} />
-        <label>Author</label>
-        <input type="text" value={author} onChange={handleAuthorChange} />
+        <label htmlFor="title">Title</label>
+        <input type="text" value={title} onChange={handleTitleChange} id="title" />
+        <label htmlFor="image">Image</label>
+        <input type="text" value={image} onChange={handleImgChange} id="image" />
+        <label htmlFor="content">Content</label>
+        <textarea rows={10} value={content} onChange={handleContentChange} id="content" />
+        <label htmlFor="author">Author</label>
+        <input type="text" value={author} onChange={handleAuthorChange} id="author" />
+        <button type="submit">Create article</button>
       </form>
     </main>
   );

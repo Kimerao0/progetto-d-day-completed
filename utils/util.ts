@@ -1,1 +1,2 @@
-export const dbConnection: string = "https://next-dday-db-default-rtdb.europe-west1.firebasedatabase.app/";
+export const dbConnection: string =
+  "mongodb+srv://Alessandro:passMongo2022Kimera@cluster0.a81eucm.mongodb.net/ddaynext?retryWrites=true&w=majority";
